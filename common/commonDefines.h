@@ -14,8 +14,8 @@ namespace TextureId {
 
 	enum ResourceId {
 
-		PRESS_KEYS,
-		LAYER_2
+		RUNNING_GIRL,
+		WHEEL
 	};
 
 
