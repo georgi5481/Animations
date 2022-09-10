@@ -23,20 +23,24 @@ endif()
 	find_package(${SDL2_mixer_name} REQUIRED)
 
 set(_BASE_DIR ${CMAKE_CURRENT_SOURCE_DIR})	#set _BASE_DIR as a variable to be set to the current path
+set(_INC_DIR ${_BASE_DIR}/include)
+set(_SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)	
 
 add_executable(
 	${PROJECT_NAME} 	
-	${_BASE_DIR}/common/commonDefines.h
+	${_INC_DIR}/common/commonDefines.h
 
-	${_BASE_DIR}/Engine/Engine.h
-	${_BASE_DIR}/Engine/Engine.cpp
-	${_BASE_DIR}/Engine/config/EngineConfig.h
-	${_BASE_DIR}/Engine/EngineConfigLoader.h
-	${_BASE_DIR}/Engine/EngineConfigLoader.cpp 
+	${_INC_DIR}/Engine/Engine.h
+	${_INC_DIR}/Engine/config/EngineConfig.h
+	${_INC_DIR}/Engine/EngineConfigLoader.h
+	${_INC_DIR}/Game/Game.h
+	${_INC_DIR}/Game/config/GameCfg.h
+	${_INC_DIR}/Game/entities/Hero.h
 	
-	${_BASE_DIR}/Game/Game.h
-	${_BASE_DIR}/Game/Game.cpp
-	${_BASE_DIR}/Game/config/GameCfg.h
+	${_SRC_DIR}/Engine/Engine.cpp
+	${_SRC_DIR}/Game/entities/Hero.cpp
+	${_SRC_DIR}/Engine/EngineConfigLoader.cpp 
+	${_SRC_DIR}/Game/Game.cpp
 	
 	${_BASE_DIR}/main.cpp
 	)

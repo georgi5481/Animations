@@ -9,7 +9,7 @@
 //3rd-party includes
 
 //Own includes
-#include "Game/Game.h"
+#include "include/Game/Game.h"
 #include "sdl_utils/InputEvent.h"
 #include "manager_utils/managers/ManagerHandler.h"
 

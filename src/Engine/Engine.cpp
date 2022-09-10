@@ -1,5 +1,5 @@
 //Corresponding header
-#include "Engine/Engine.h"
+#include "include/Engine/Engine.h"
 
 //C headers
 
@@ -7,7 +7,7 @@
 #include<iostream>
 
 //own includes
-#include "Engine/config/EngineConfig.h"
+#include "include/Engine/config/EngineConfig.h"
 #include "manager_utils/managers/DrawMgr.h"
 
 

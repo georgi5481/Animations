@@ -1,30 +1,29 @@
 //Corresponding header
-#include "Engine/EngineConfigLoader.h"
-
+#include "include/Engine/EngineConfigLoader.h"
+//C++ headers
 #include<cstdint>
 
 //3rd-party includes
 
 
 //Own includes
-#include "common/commonDefines.h"
+#include "include/common/commonDefines.h"
 
 //constants
 namespace{		//the anonymous namespace will work only on this .cpp file
 constexpr auto WINDOW_WIDTH = 800;
 constexpr auto WINDOW_HEIGHT = 600;
-constexpr auto WINDOW_NAME = "Texts";
+constexpr auto WINDOW_NAME = "Animations";
 
 
-constexpr auto PRESS_KEYS_WIDTH = 640;			//here you can scale manually the pictures
-constexpr auto PRESS_KEYS_HEIGHT = 480;
+constexpr auto RUNNING_GIRL_WIDTH = 1536;			//here you can scale manually the pictures
+constexpr auto RUNNING_GIRL_HEIGHT = 220;
 
-constexpr auto LAYER_2_IMG_WIDTH = 160;
-constexpr auto LAER_2_IMG_HEIGHT = 120;
+constexpr auto WHEEL_IMG_WIDTH_HEIGHT = 695;
 
 constexpr auto MAX_FRAMERATE = 30;
 
-constexpr auto ANGELINE_VINTAGE_40_FONTSIZE = 120;	//we can load the same font with a different size аt the same time
+constexpr auto ANGELINE_VINTAGE_40_FONTSIZE = 80;	//we can load the same font with a different size аt the same time
 }
 
 static std::string getFilePath(const std::string& relativePath){
@@ -38,18 +37,18 @@ static std::string getFilePath(const std::string& relativePath){
 static void populateImageContainerConfig(ImageContainerCfg& cfg){
 
 	ImageCfg imageCfg;
-	imageCfg.location = getFilePath("resources/pictures/press_keys.png");
-	imageCfg.height = PRESS_KEYS_WIDTH;
-	imageCfg.width = PRESS_KEYS_HEIGHT;
+	imageCfg.location = getFilePath("resources/pictures/sprites/running_girl.png");
+	imageCfg.height = RUNNING_GIRL_WIDTH;
+	imageCfg.width = RUNNING_GIRL_WIDTH;
 
-	cfg.imageConfigs.insert(std::make_pair(TextureId::PRESS_KEYS,imageCfg));	//we have to pair them first with the ID
+	cfg.imageConfigs.emplace(TextureId::RUNNING_GIRL,imageCfg);	//we have to pair them first with the ID
 
 
-	imageCfg.location = getFilePath("resources/pictures/layer_2.png");
-	imageCfg.height = LAYER_2_IMG_WIDTH;
-	imageCfg.width = LAER_2_IMG_HEIGHT;
+	imageCfg.location = getFilePath("resources/pictures/wheel.png");
+	imageCfg.height = WHEEL_IMG_WIDTH_HEIGHT;
+	imageCfg.width = WHEEL_IMG_WIDTH_HEIGHT;
 
-	cfg.imageConfigs.insert(std::make_pair(TextureId::LAYER_2,imageCfg));	//we have to pair them first with the ID
+	cfg.imageConfigs.emplace(TextureId::WHEEL,imageCfg);	//we have to pair them first with the ID
 }
 
 

@@ -10,7 +10,7 @@
 
 //Own includes
 #include "manager_utils/config/ManagerHandlerCfg.h"
-#include "Game/config/GameCfg.h"
+#include "include/Game/config/GameCfg.h"
 
 //Forward Declaration
 

@@ -10,7 +10,7 @@
 //3rd-party includes
 
 //Own includes
-#include "Game/config/GameCfg.h"
+#include "include/Game/config/GameCfg.h"
 #include "manager_utils/drawing/Image.h"
 #include "manager_utils/drawing/Text.h"
 
