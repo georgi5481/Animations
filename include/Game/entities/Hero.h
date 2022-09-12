@@ -8,9 +8,21 @@
 //3rd-party includes
 
 //Own includes
-
+#include"manager_utils/drawing/Image.h"
 //Forward Declaration
+struct InputEvent;
 
+class Hero{
+public:
+	int32_t init(int32_t heroRsrcId);
+	void deinit();
+	void draw();
+	void handleEvent(const InputEvent& e);
+
+private:
+	Image img;
+
+};
 
 
 
