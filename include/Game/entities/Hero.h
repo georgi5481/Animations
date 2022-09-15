@@ -20,7 +20,7 @@ public:
 	void handleEvent(const InputEvent& e);
 
 private:
-	Image img;
+	Image _heroImg;
 
 };
 

@@ -12,14 +12,19 @@
 
 int32_t Hero::init(int32_t heroRsrcId)
 {
+	_heroImg.create(heroRsrcId, Point(400,200));
+
 return EXIT_SUCCESS;
 }
-void Hero::deinit(){
+
+void Hero::deinit(){	//no need for implementation. It will call the destructor of image
 
 }
+
+
 void Hero::draw(){
-
+_heroImg.draw();
 }
-void Hero::handleEvent(const InputEvent& e){
+void Hero::handleEvent([[maybe_unused]]const InputEvent& e){
 
 }

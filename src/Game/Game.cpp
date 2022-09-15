@@ -13,6 +13,11 @@
 #include "sdl_utils/InputEvent.h"
 
 int32_t Game::init(const GameCfg& cfg){
+
+	if(EXIT_SUCCESS != _hero.init(cfg.runningGirlRsrcId)){
+		return EXIT_FAILURE;
+	}
+
 	_mousePosText.create("_", cfg.textFontId, Colors::GREEN);
 	_mousePosText.hide();
 	return EXIT_SUCCESS;
