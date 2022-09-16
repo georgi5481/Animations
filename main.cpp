@@ -8,8 +8,8 @@
 #include <cstdlib>
 #include <string>
 
-#include "Engine/Engine.h"
-#include "Engine/EngineConfigLoader.h"
+#include "include/Engine/Engine.h"
+#include "include/Engine/EngineConfigLoader.h"
 #include "sdl_utils/SDLLoader.h"
 #include "sdl_utils/MonitorWindow.h"
 

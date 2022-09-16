@@ -4,6 +4,7 @@
 
 //C++ system includes
 #include<cstdint>
+#include<stdlib.h>
 //3rd-party includes
 
 //Own includes

@@ -24,15 +24,18 @@ int32_t Game::init(const GameCfg& cfg){
 }
 
 void Game::deinit(){
-
+	_hero.deinit();
 }
 
 void Game::draw(){
+	_hero.draw();
 	_mousePosText.draw();
 }
 
 void Game::handleEvent([[maybe_unused]]const InputEvent& e){
-	if(TouchEvent::TOUCH_PRESS != e.type){	//if we dont touch with the mouse - do nothing
+
+	_hero.handleEvent(e);
+	if(TouchEvent::TOUCH_PRESS != e.type){	//if we don't touch with the mouse - do nothing
 		return;
 	}
 

@@ -90,8 +90,9 @@ void populateManagerHandlerCfg(ManagerHandlerCfg& cfg){
 }
 
 static void populateGameConfig(GameCfg& cfg){
-	cfg.layer2RsrcId = TextureId::LAYER_2;
-	cfg.pressKeysRsrcId = TextureId::PRESS_KEYS;
+	cfg.runningGirlRsrcId = TextureId::RUNNING_GIRL;
+	cfg.wheelRsrcId = TextureId::WHEEL;
+
 	cfg.textFontId = FontId::ANGELINE_VINTAGE_40;	//place unique key for our flyweight design pattern
 }
 

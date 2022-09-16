@@ -13,7 +13,7 @@
 #include "include/Game/config/GameCfg.h"
 #include "manager_utils/drawing/Image.h"
 #include "manager_utils/drawing/Text.h"
-#include "Game/entities/Hero.h"
+#include "entities/Hero.h"
 
 //Forward Declaration
 struct InputEvent;
