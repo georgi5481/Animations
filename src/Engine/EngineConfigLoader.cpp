@@ -15,8 +15,8 @@ constexpr auto WINDOW_WIDTH = 800;
 constexpr auto WINDOW_HEIGHT = 600;
 constexpr auto WINDOW_NAME = "Animations";
 
-
-constexpr auto RUNNING_GIRL_WIDTH = 1536;			//here you can scale manually the pictures
+constexpr auto RUNNING_GIRL_FRAMES = 6;
+constexpr auto RUNNING_GIRL_WIDTH = 256;			//here you can scale manually the pictures
 constexpr auto RUNNING_GIRL_HEIGHT = 220;
 
 constexpr auto WHEEL_IMG_WIDTH_HEIGHT = 695;
