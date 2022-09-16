@@ -38,7 +38,7 @@ static void populateImageContainerConfig(ImageContainerCfg& cfg){
 
 	ImageCfg imageCfg;
 	imageCfg.location = getFilePath("resources/pictures/sprites/running_girl.png");
-	imageCfg.height = RUNNING_GIRL_WIDTH;
+	imageCfg.height = RUNNING_GIRL_HEIGHT;
 	imageCfg.width = RUNNING_GIRL_WIDTH;
 
 	cfg.imageConfigs.emplace(TextureId::RUNNING_GIRL,imageCfg);	//we have to pair them first with the ID

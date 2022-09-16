@@ -13,7 +13,7 @@
 
 int32_t Hero::init(int32_t heroRsrcId)
 {
-	_heroImg.create(heroRsrcId, Point(400,200));
+	_heroImg.create(heroRsrcId, Point(0,0));
 
 return EXIT_SUCCESS;
 }
