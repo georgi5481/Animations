@@ -38,17 +38,24 @@ static void populateImageContainerConfig(ImageContainerCfg& cfg){
 
 	ImageCfg imageCfg;
 	imageCfg.location = getFilePath("resources/pictures/sprites/running_girl.png");
-	imageCfg.height = RUNNING_GIRL_HEIGHT;
-	imageCfg.width = RUNNING_GIRL_WIDTH;
+	for(auto i = 0; i < RUNNING_GIRL_FRAMES; ++i){
+		imageCfg.frames.emplace_back(i * RUNNING_GIRL_WIDTH,	//x
+										0,						//y
+										WHEEL_IMG_WIDTH_HEIGHT,		//width
+										WHEEL_IMG_WIDTH_HEIGHT);	//height (same cuz its a circle)
+	}
 
 	cfg.imageConfigs.emplace(TextureId::RUNNING_GIRL,imageCfg);	//we have to pair them first with the ID
-
+	imageCfg.frames.clear();
 
 	imageCfg.location = getFilePath("resources/pictures/wheel.png");
-	imageCfg.height = WHEEL_IMG_WIDTH_HEIGHT;
-	imageCfg.width = WHEEL_IMG_WIDTH_HEIGHT;
+	imageCfg.frames.emplace_back(	0,	//x
+									0,						//y
+									RUNNING_GIRL_WIDTH,		//width
+									RUNNING_GIRL_HEIGHT);	//height
 
 	cfg.imageConfigs.emplace(TextureId::WHEEL,imageCfg);	//we have to pair them first with the ID
+	imageCfg.frames.clear();
 }
 
 

@@ -7,6 +7,7 @@
 #include<cstdint>
 #include<unordered_map>
 #include<string>
+#include<vector>
 //3rd-party includes
 
 //Own includes
@@ -14,11 +15,11 @@
 
 //Forward Declaration
 
-struct ImageCfg {
+struct ImageCfg{
 	std::string location;
-	int32_t width = 0;
-	int32_t height = 0;
+	std::vector<Rectangle> frames;
 };
+
 
 struct ImageContainerCfg{
 	std::unordered_map<int32_t, ImageCfg> imageConfigs;
