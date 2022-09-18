@@ -21,6 +21,7 @@ void Image::create(int32_t rsrcId, const Point& pos){	//parsing default paramete
 		std::cerr << "Error, image with rsrcId: " << rsrcId
 				<< " was already created. Will not create twice. " << std::endl;
 	}
+
 	const Frames& frames = gRsrcMgr->getImageFrame(rsrcId);
 	const auto& firstFrame = frames.front();	//taking a const reference of the first element of the vector
 	_drawParams.frameRect = firstFrame;

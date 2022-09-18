@@ -12,8 +12,8 @@
 
 //Forward Declaration
 
-Rectangle::Rectangle(int32_t inputX, int32_t inputY, int32_t inputHeight, int32_t inputWidth)
-										: x(inputX), y(inputY), h(inputHeight), w(inputWidth){
+Rectangle::Rectangle(int32_t inputX, int32_t inputY, int32_t inputWidth,int32_t inputHeight)
+										: x(inputX), y(inputY), w(inputWidth), h(inputHeight){
 }
 
 const Rectangle Rectangle::ZERO(0,0,0,0);
