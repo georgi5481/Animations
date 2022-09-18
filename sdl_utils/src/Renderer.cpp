@@ -109,7 +109,7 @@ void Renderer::drawText(const DrawParams& drawParams, SDL_Texture* texture){
 	//reinterpret_cast is equal to C cast. So be carefull using it
 
 
-	const int32_t err = SDL_RenderCopy(_sdlRenderer, texture,sourceRect, & destRect);
+	const int32_t err = SDL_RenderCopy(_sdlRenderer, texture,sourceRect, &destRect);
 	//TODO: handle properly - do not set alpha every time
 	if(EXIT_SUCCESS != err) {
 		std::cerr << "RenderCopy() failed for rsrcId():" << drawParams.rsrcId << " Reason : " << SDL_GetError() << std::endl;
@@ -129,15 +129,15 @@ void Renderer::drawImage(const DrawParams& drawParams, SDL_Texture* texture){
 	if(ZERO_OPACITY >= drawParams.opacity && FULL_OPACITY <= drawParams.opacity) {
 		/*first argument - The renderer which should copy parts of a texture
 		 * second - The source texture
-		 * third - NULL for the entire texture to be displayed
+		 * third - NULL for the entire texture to be displayed, or the dimensions of the window you would like to show
 		 * fourth - NULL for the entire rendering target*/
-		err = SDL_RenderCopy(_sdlRenderer, texture,sourceRect, &destRect);
+		err = SDL_RenderCopy(_sdlRenderer, texture, sourceRect, &destRect);
 	}
 	else{
 		if(EXIT_SUCCESS != Texture::setAlphaTexture(texture, drawParams.opacity)){
 			std::cerr << "Texture::setAlphaTexture failed for rsrcId : " << drawParams.rsrcId << std::endl;
 		}
-		err = SDL_RenderCopy(_sdlRenderer, texture,nullptr, & destRect);
+		err = SDL_RenderCopy(_sdlRenderer, texture, sourceRect, &destRect);	//dont forget to switch the parameters on both places
 
 
 	}
