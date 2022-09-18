@@ -137,7 +137,7 @@ void Renderer::drawImage(const DrawParams& drawParams, SDL_Texture* texture){
 		if(EXIT_SUCCESS != Texture::setAlphaTexture(texture, drawParams.opacity)){
 			std::cerr << "Texture::setAlphaTexture failed for rsrcId : " << drawParams.rsrcId << std::endl;
 		}
-		err = SDL_RenderCopy(_sdlRenderer, texture, sourceRect, &destRect);	//dont forget to switch the parameters on both places
+		err = SDL_RenderCopy(_sdlRenderer, texture, sourceRect, &destRect);	//dont forget to switch the parameters here as well
 
 
 	}
