@@ -29,13 +29,18 @@ void Text::create(const std::string& text, int32_t fontId, const Color& color,
 	gRsrcMgr->createText(text, color, 	fontId, _drawParams.rsrcId, _drawParams.width,
 								_drawParams.height);
 
-	 _textContent= text;	//setting the information in case we need it later on
-	 _color = color;
-	 _fontId = fontId;
+	_drawParams.frameRect.x = 0;
+	_drawParams.frameRect.y = 0;
+	_drawParams.frameRect.w = _drawParams.width;
+	_drawParams.frameRect.h = _drawParams.height;
+
 
 	_drawParams.pos = pos;
 	_drawParams.widgetType = WidgetType::TEXT;
 
+	 _textContent= text;	//setting the information in case we need it later on
+	 _color = color;
+	 _fontId = fontId;
 
 	_isCreated = true;
 	_isDestroyed = false;

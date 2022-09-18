@@ -12,6 +12,8 @@
 #include "sdl_utils/Texture.h"
 #include "utils/drawings/DrawParams.h"
 
+static const Frames EMPTY_FRAMES {Rectangle::ZERO};
+
 int32_t ImageContainer::init(const ImageContainerCfg& cfg){
 	for(const auto& pair : cfg.imageConfigs)
 	{
@@ -49,12 +51,12 @@ SDL_Texture* ImageContainer::getImageTexture(int32_t rsrcId) const{
 }
 
 
-Rectangle ImageContainer::getImageFrame(int32_t rsrcId) const{	//will return the rectangle area
+const Frames&  ImageContainer::getImageFrame(int32_t rsrcId) const{	//will return the rectangle area
 	//we need to find if there is an element in the map with this key first. Otherwise it will make a new element with this key if not found.
 	auto it = _textureFrames.find(rsrcId);
 		if(it == _textureFrames.end()){
-			std::cerr <<"Error, invalid rsrcId: " << rsrcId << " requested. Returning ZERO rectangle" << std::endl;
-			return Rectangle::ZERO;
+			std::cerr <<"Error, invalid rsrcId: " << rsrcId << " requested. Returning EMPTY_FRAMES" << std::endl;
+			return EMPTY_FRAMES;
 		}
 
 	return it->second;	//and basically returning the value of the found element via the key rsrcId
@@ -72,13 +74,8 @@ int32_t ImageContainer::loadSingleResource(const ImageCfg& resCfg, int32_t rsrcI
 
 
 	_textures[rsrcId] = texture;
+	_textureFrames[rsrcId] = resCfg.frames;	//using this way the reference is so much better
 
-	//a good practice is to take out the reference, and then implement the values. Don't search in the map with the key cuz it will make a new object if not found.
-	Rectangle& rect = _textureFrames[rsrcId];	//using this way the reference is so much better
-	rect.x = 0;
-	rect.y = 0;
-	rect.w = resCfg.width;
-	rect.h = resCfg.height;
 
 	return EXIT_SUCCESS;
 }

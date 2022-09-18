@@ -1,4 +1,4 @@
-//Coresponding Header
+//Coresponding Headerrectangle
 #include "manager_utils/drawing/Image.h"
 
 //C system includes
@@ -21,10 +21,13 @@ void Image::create(int32_t rsrcId, const Point& pos){	//parsing default paramete
 		std::cerr << "Error, image with rsrcId: " << rsrcId
 				<< " was already created. Will not create twice. " << std::endl;
 	}
-	const Rectangle rect = gRsrcMgr->getImageFrame(rsrcId);
+	const Frames& frames = gRsrcMgr->getImageFrame(rsrcId);
+	const auto& firstFrame = frames.front();	//taking a const reference of the first element of the vector
+	_drawParams.frameRect = firstFrame;
+
 	_drawParams.rsrcId = rsrcId;
-	_drawParams.width = rect.w;
-	_drawParams.height = rect.h;
+	_drawParams.width = _drawParams.frameRect.w;
+	_drawParams.height = _drawParams.frameRect.h;
 	_drawParams.pos = pos;
 	_drawParams.widgetType = WidgetType::IMAGE;
 

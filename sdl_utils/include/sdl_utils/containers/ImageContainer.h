@@ -12,6 +12,8 @@
 #include "utils/drawings/Rectangle.h"
 #include "sdl_utils/config/ImageContainerCfg.h"
 
+using Frames = std::vector<Rectangle>;	//places Frames instead of std::vector<Rectangle>
+
 //Forward Declaration
 
 struct SDL_Texture;
@@ -23,7 +25,7 @@ public:
 
 	SDL_Texture* getImageTexture(int32_t rsrcId) const;	//will basically search in the map below ( _textures )
 
-	Rectangle getImageFrame(int32_t rsrcId) const;		//this one will search in the other map below for the pixel frame ( _textureFrames )
+	const Frames& getImageFrame(int32_t rsrcId) const;		//this one will search in the other map below for the pixel frame ( _textureFrames )
 
 
 protected:	//we can't create objects if not inherited and used by the other class
@@ -34,9 +36,9 @@ private:
 
 	int32_t loadSingleResource(const ImageCfg& resCfg, int32_t rsrcId);
 
-	std::unordered_map<int32_t, SDL_Texture*> _textures;	//in the first we are saving the ID and the texture
+	std::unordered_map<int32_t, SDL_Texture*> _textures;	//in the first vector we are saving the ID and the texture
 
-	std::unordered_map<int32_t, Rectangle> _textureFrames;	//in the second we are saving the ID and the rectangle dimensions
+	std::unordered_map<int32_t, Frames> _textureFrames;		//in the second vector we are saving the ID and the rectangle dimensions
 
 
 };

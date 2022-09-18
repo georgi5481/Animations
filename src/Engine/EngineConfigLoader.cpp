@@ -39,22 +39,23 @@ static void populateImageContainerConfig(ImageContainerCfg& cfg){
 	ImageCfg imageCfg;
 	imageCfg.location = getFilePath("resources/pictures/sprites/running_girl.png");
 	for(auto i = 0; i < RUNNING_GIRL_FRAMES; ++i){
-		imageCfg.frames.emplace_back(i * RUNNING_GIRL_WIDTH,	//x
-										0,						//y
-										WHEEL_IMG_WIDTH_HEIGHT,		//width
-										WHEEL_IMG_WIDTH_HEIGHT);	//height (same cuz its a circle)
+		imageCfg.frames.emplace_back(i * RUNNING_GIRL_WIDTH,	//x	of the rectangle to visualise
+										0,						//y of the rectangle to visualise
+										RUNNING_GIRL_WIDTH,		//width
+										RUNNING_GIRL_HEIGHT);	//height
 	}
 
 	cfg.imageConfigs.emplace(TextureId::RUNNING_GIRL,imageCfg);	//we have to pair them first with the ID
-	imageCfg.frames.clear();
+
+	imageCfg.frames.clear();	//clear the config and start implementing it again for the next image
 
 	imageCfg.location = getFilePath("resources/pictures/wheel.png");
-	imageCfg.frames.emplace_back(	0,	//x
-									0,						//y
-									RUNNING_GIRL_WIDTH,		//width
-									RUNNING_GIRL_HEIGHT);	//height
+	imageCfg.frames.emplace_back(	0,							//x of the rectangle to visualise
+									0,							//y of the rectangle to visualise
+									WHEEL_IMG_WIDTH_HEIGHT,		//width
+									WHEEL_IMG_WIDTH_HEIGHT);	//height (same cuz its a circle)
 
-	cfg.imageConfigs.emplace(TextureId::WHEEL,imageCfg);	//we have to pair them first with the ID
+	cfg.imageConfigs.emplace(TextureId::WHEEL,imageCfg);
 	imageCfg.frames.clear();
 }
 

@@ -45,7 +45,7 @@ public:
 	void moveDown(int32_t delta);
 
 	//move methods could be added for convenience
-	//show & hide methods could alse be implemented for convenience
+	//show & hide methods could also be implemented for convenience
 protected:
 	DrawParams _drawParams;
 
