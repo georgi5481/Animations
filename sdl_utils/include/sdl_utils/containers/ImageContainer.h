@@ -21,8 +21,6 @@ struct SDL_Texture;
 class ImageContainer {
 public:
 
-
-
 	SDL_Texture* getImageTexture(int32_t rsrcId) const;	//will basically search in the map below ( _textures )
 
 	const Frames& getImageFrame(int32_t rsrcId) const;		//this one will search in the other map below for the pixel frame ( _textureFrames )
