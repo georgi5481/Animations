@@ -33,11 +33,13 @@ void Hero::handleEvent(const InputEvent& e){
 	}
 
 	switch(e.key){
-	case Keyboard::KEY_NUMPAD_PLUS:
+	case Keyboard::KEY_RIGHT:
 		_heroImg.setNextFrame();
+		_heroImg.moveRight(10);
 		break;
-	case Keyboard::KEY_NUMPAD_MINUS:
+	case Keyboard::KEY_LEFT:
 		_heroImg.setPrevFrame();
+		_heroImg.moveLeft(10);
 		break;
 
 	default:
