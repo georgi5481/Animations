@@ -26,6 +26,21 @@ void Hero::deinit(){	//no need for implementation. It will call the destructor o
 void Hero::draw(){
 _heroImg.draw();
 }
-void Hero::handleEvent([[maybe_unused]]const InputEvent& e){
+void Hero::handleEvent(const InputEvent& e){
 
+	if(TouchEvent::KEYBOARD_PRESS != e.type){
+		return;
+	}
+
+	switch(e.key){
+	case Keyboard::KEY_NUMPAD_PLUS:
+		_heroImg.setNextFrame();
+		break;
+	case Keyboard::KEY_NUMPAD_MINUS:
+		_heroImg.setPrevFrame();
+		break;
+
+	default:
+		break;
+	}
 }
