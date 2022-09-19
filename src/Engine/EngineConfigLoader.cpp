@@ -50,12 +50,12 @@ static void populateImageContainerConfig(ImageContainerCfg& cfg){
 	imageCfg.frames.clear();	//clear the config and start implementing it again for the next image
 
 	imageCfg.location = getFilePath("resources/pictures/wheel.png");
-	for(auto i = 0; i < RUNNING_GIRL_FRAMES; ++i){
+
 	imageCfg.frames.emplace_back(	0,							//x of the rectangle to visualise
 									0,							//y of the rectangle to visualise
 									WHEEL_IMG_WIDTH_HEIGHT,		//width
 									WHEEL_IMG_WIDTH_HEIGHT);	//height (same cuz its a circle)
-	}
+
 	cfg.imageConfigs.emplace(TextureId::WHEEL,imageCfg);
 	imageCfg.frames.clear();
 }

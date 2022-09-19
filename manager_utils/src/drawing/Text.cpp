@@ -66,6 +66,9 @@ void Text::setText(const std::string& text){
 	gRsrcMgr->reloadText(text, _color, _fontId,
 			_drawParams.rsrcId, _drawParams.width, _drawParams.height);
 
+	_drawParams.frameRect.w = _drawParams.width;
+	_drawParams.frameRect.h = _drawParams.height;	//we have to change the dimensions every time we set
+
 }
 void Text::setColor(const Color& color){
 	if(color == _color){
