@@ -30,4 +30,7 @@ void DrawParams::reset(){	//setting the variables to their original state
 
 
 	 widgetType = WidgetType::UNKNOWN;
+
+	flipType = WidgetFlip::NONE;
+
 }

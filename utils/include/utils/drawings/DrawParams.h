@@ -21,6 +21,13 @@ inline constexpr auto INVALID_RSRC_ID = -1;
 inline constexpr auto FULL_OPACITY = 255;
 inline constexpr auto ZERO_OPACITY = 0;
 
+enum class WidgetFlip : uint8_t{	//basically an enum that has uint8_t bits long variables
+	NONE,
+	HORIZONTAL,
+	VERTICAL,
+	HORIZONTAL_AND_VERTICAL
+};
+
 enum class WidgetType : uint8_t{
 	IMAGE,
 	TEXT,
@@ -59,6 +66,8 @@ struct DrawParams {
 
 	WidgetType widgetType = WidgetType::UNKNOWN;	//to know what we are going to show
 
+
+	WidgetFlip flipType = WidgetFlip::NONE;	//by default we do not want any mirroring
 };
 
 
