@@ -34,10 +34,12 @@ void Hero::handleEvent(const InputEvent& e){
 
 	switch(e.key){
 	case Keyboard::KEY_RIGHT:
+		_heroImg.setFlipType(WidgetFlip::NONE);
 		_heroImg.setNextFrame();
 		_heroImg.moveRight(10);
 		break;
 	case Keyboard::KEY_LEFT:
+		_heroImg.setFlipType(WidgetFlip::HORIZONTAL);
 		_heroImg.setPrevFrame();
 		_heroImg.moveLeft(10);
 		break;

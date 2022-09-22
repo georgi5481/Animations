@@ -128,8 +128,12 @@ void Renderer::drawTextureInternal(const DrawParams& drawParams, SDL_Texture* te
 	/*first argument - The renderer which should copy parts of a texture
 		 * second - The source texture
 		 * third - NULL for the entire texture to be displayed, or the dimensions of the window you would like to show
-		 * fourth - NULL for the entire rendering target*/
-	const int32_t err = SDL_RenderCopy(_sdlRenderer, texture,sourceRect, &destRect);
+		 * fourth - NULL for the entire rendering target
+		 * fifth -an angle in degrees that indicates the rotation of destRect(clockwise)
+		 * six - the point of center rotation position
+		 * seven - enum mask for a flipping effect*/
+	const int32_t err = SDL_RenderCopyEx(_sdlRenderer, texture,sourceRect, &destRect,
+							0.0, nullptr, static_cast<SDL_RendererFlip>(drawParams.flipType));
 	if(EXIT_SUCCESS != err) {
 		std::cerr << "RenderCopy() failed for rsrcId():" << drawParams.rsrcId << " Reason : " << SDL_GetError() << std::endl;
 	}

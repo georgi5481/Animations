@@ -24,6 +24,10 @@ void Widget::reset() {	//returning the boolean values into their original state
 	 _drawParams.reset();
 }
 
+void Widget::setFlipType(WidgetFlip flipType){
+	_drawParams.flipType = flipType;
+}
+
 void Widget::setWidth(int32_t width){
 	_drawParams.width = width;
 }

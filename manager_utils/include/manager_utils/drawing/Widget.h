@@ -20,6 +20,8 @@ public:
 	//setter & getters
 	void reset();
 
+	void setFlipType(WidgetFlip flipType);
+
 	void setWidth(int32_t width);
 	void setHeight(int32_t height);
 
