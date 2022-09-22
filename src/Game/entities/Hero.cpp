@@ -44,6 +44,15 @@ void Hero::handleEvent(const InputEvent& e){
 		_heroImg.moveLeft(10);
 		break;
 
+	case Keyboard::KEY_DOWN:
+		_heroImg.setNextFrame();
+		_heroImg.moveDown(10);
+		break;
+	case Keyboard::KEY_UP:
+		_heroImg.setPrevFrame();
+		_heroImg.moveUp(10);
+		break;
+
 	default:
 		break;
 	}

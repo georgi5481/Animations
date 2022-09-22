@@ -46,6 +46,8 @@ enum class BlendMode: uint8_t {	//instead of using normal int, this way we can f
 struct DrawParams {
 	void reset();
 
+	double rotationAngle = 0.0;
+
 	Rectangle frameRect = Rectangle::ZERO;
 
 	//Where to place the texture position on the screen.

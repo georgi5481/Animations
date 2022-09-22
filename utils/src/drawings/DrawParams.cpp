@@ -18,7 +18,9 @@ void DrawParams::reset(){	//setting the variables to their original state
 
 	frameRect = Rectangle::ZERO;
 
-	 pos = Point::UNDEFINED;
+	rotationAngle = 0.0;
+
+	pos = Point::UNDEFINED;
 
 	 width = 0;
 	 height = 0;
