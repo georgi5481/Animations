@@ -41,6 +41,8 @@ private:
 
 	void drawText(const DrawParams& drawParams, SDL_Texture* texture);
 	void drawImage(const DrawParams& drawParams, SDL_Texture* texture);
+	void drawTextureInternal(const DrawParams& drawParams, SDL_Texture* texture);
+
 	SDL_Renderer *_sdlRenderer = nullptr;
 
 
