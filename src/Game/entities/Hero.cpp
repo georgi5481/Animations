@@ -52,6 +52,13 @@ void Hero::handleEvent(const InputEvent& e){
 		_heroImg.setPrevFrame();
 		_heroImg.moveUp(10);
 		break;
+		//rotation
+	case Keyboard::KEY_E:
+		_heroImg.rotateRight(10);
+		break;
+	case Keyboard::KEY_Q:
+		_heroImg.rotateLeft(10);
+		break;
 
 	default:
 		break;

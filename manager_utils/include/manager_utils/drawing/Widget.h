@@ -25,7 +25,11 @@ public:
 	void setWidth(int32_t width);
 	void setHeight(int32_t height);
 
-	void setFlipType(double angle);
+	void setRotation(double angle);
+	double getRotation()const;
+
+	void rotateRight(double delta);
+	void rotateLeft(double delta);
 
 
 	int32_t getWidth() const;

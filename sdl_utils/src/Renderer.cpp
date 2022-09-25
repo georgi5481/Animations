@@ -133,7 +133,7 @@ void Renderer::drawTextureInternal(const DrawParams& drawParams, SDL_Texture* te
 		 * six - the point of center rotation position
 		 * seven - enum mask for a flipping effect*/
 	const int32_t err = SDL_RenderCopyEx(_sdlRenderer, texture,sourceRect, &destRect,
-							0.0, nullptr, static_cast<SDL_RendererFlip>(drawParams.flipType));
+			drawParams.rotationAngle , nullptr, static_cast<SDL_RendererFlip>(drawParams.flipType));
 	if(EXIT_SUCCESS != err) {
 		std::cerr << "RenderCopy() failed for rsrcId():" << drawParams.rsrcId << " Reason : " << SDL_GetError() << std::endl;
 	}

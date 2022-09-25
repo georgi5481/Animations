@@ -36,8 +36,19 @@ void Widget::setHeight(int32_t height){
 	_drawParams.height = height;
 }
 
-void Widget::setFlipType(double angle){
+void Widget::setRotation(double angle){
 	_drawParams.rotationAngle = angle;
+}
+
+double Widget::getRotation()const{
+	return _drawParams.rotationAngle;
+}
+
+void Widget::rotateRight(double delta){
+	_drawParams.rotationAngle += delta;
+}
+void Widget::rotateLeft(double delta){
+	_drawParams.rotationAngle -= delta;
 }
 
 int32_t Widget::getWidth() const{
