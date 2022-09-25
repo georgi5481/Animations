@@ -25,6 +25,9 @@ public:
 	void setWidth(int32_t width);
 	void setHeight(int32_t height);
 
+	void setFlipType(double angle);
+
+
 	int32_t getWidth() const;
 	int32_t getHeight() const;
 
