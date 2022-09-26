@@ -52,7 +52,7 @@ struct DrawParams {
 	Point pos = Point::UNDEFINED;
 
 	double rotationAngle = 0.0; //in degrees
-
+	Point rotationCenter = Point::ZERO;
 
 	//Draw dimensions of the texture
 	int32_t width = 0;

@@ -35,6 +35,21 @@ void Wheel::handleEvent(const InputEvent& e){
 		_wheelImg.rotateLeft(10);
 		break;
 
+	case Keyboard::KEY_P:
+		_wheelImg.setRotationPoint(Point::ZERO);
+		break;
+	case Keyboard::KEY_O:{
+		Point rotCenter(_wheelImg.getWidth(), _wheelImg.getHeight());
+		rotCenter.x /=2;
+		rotCenter.y /=2;
+
+		_wheelImg.setRotationPoint(rotCenter);
+
+
+		}
+		break;
+
+
 	default:
 		break;
 	}

@@ -123,7 +123,8 @@ void Renderer::drawTextureInternal(const DrawParams& drawParams, SDL_Texture* te
 								.w = drawParams.width, .h = drawParams.height };
 
 	const SDL_Rect* sourceRect = reinterpret_cast<const SDL_Rect*>(&drawParams.frameRect);
-	//reinterpret_cast is equal to C cast. So be carefull using it
+	//reinterpret_cast the memory so that it will treat the same way as the defined
+	const SDL_Point* center = reinterpret_cast<const SDL_Point*>(&drawParams.rotationCenter);
 
 	/*first argument - The renderer which should copy parts of a texture
 		 * second - The source texture
@@ -133,7 +134,7 @@ void Renderer::drawTextureInternal(const DrawParams& drawParams, SDL_Texture* te
 		 * six - the point of center rotation position
 		 * seven - enum mask for a flipping effect*/
 	const int32_t err = SDL_RenderCopyEx(_sdlRenderer, texture,sourceRect, &destRect,
-			drawParams.rotationAngle , nullptr, static_cast<SDL_RendererFlip>(drawParams.flipType));
+			drawParams.rotationAngle , center, static_cast<SDL_RendererFlip>(drawParams.flipType));
 	if(EXIT_SUCCESS != err) {
 		std::cerr << "RenderCopy() failed for rsrcId():" << drawParams.rsrcId << " Reason : " << SDL_GetError() << std::endl;
 	}

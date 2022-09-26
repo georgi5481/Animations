@@ -36,6 +36,9 @@ void Widget::setHeight(int32_t height){
 	_drawParams.height = height;
 }
 
+void Widget::setRotationPoint(const Point& posCenter){
+	_drawParams.rotationCenter = posCenter;
+}
 void Widget::setRotation(double angle){
 	_drawParams.rotationAngle = angle;
 }

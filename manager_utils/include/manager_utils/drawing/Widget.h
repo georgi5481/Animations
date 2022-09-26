@@ -25,6 +25,7 @@ public:
 	void setWidth(int32_t width);
 	void setHeight(int32_t height);
 
+	void setRotationPoint(const Point& posCenter);
 	void setRotation(double angle);
 	double getRotation()const;
 
