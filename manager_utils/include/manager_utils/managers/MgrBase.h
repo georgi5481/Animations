@@ -11,6 +11,8 @@
 
 //Forward Declaration
 
+
+
 enum{
 	DRAW_MGR_IDX,
 	RSRC_MGR_IDX,

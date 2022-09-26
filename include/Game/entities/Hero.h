@@ -15,7 +15,7 @@ struct InputEvent;
 class Hero{
 public:
 	int32_t init(int32_t heroRsrcId);
-	void deinit();
+	void deinit();	//no need cuz it will call the destructor of Image
 	void draw();
 	void handleEvent(const InputEvent& e);
 

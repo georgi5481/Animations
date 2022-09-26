@@ -18,6 +18,10 @@ int32_t Game::init(const GameCfg& cfg){
 		return EXIT_FAILURE;
 	}
 
+	if(EXIT_SUCCESS != _wheel.init(cfg.wheelRsrcId)){
+		return EXIT_FAILURE;
+	}
+
 	_mousePosText.create("_", cfg.textFontId, Colors::GREEN);
 	_mousePosText.hide();
 	return EXIT_SUCCESS;
@@ -28,13 +32,15 @@ void Game::deinit(){
 }
 
 void Game::draw(){
+	_wheel.draw();
 	_hero.draw();
 	_mousePosText.draw();
 }
 
 void Game::handleEvent([[maybe_unused]]const InputEvent& e){
-
+	_wheel.handleEvent(e);
 	_hero.handleEvent(e);
+
 	if(TouchEvent::KEYBOARD_PRESS != e.type){	//if we don't touch with the mouse - do nothing
 		if(Keyboard::KEY_C == e.key){
 			_mousePosText.rotateRight(45);

@@ -14,6 +14,7 @@
 #include "manager_utils/drawing/Image.h"
 #include "manager_utils/drawing/Text.h"
 #include "entities/Hero.h"
+#include "entities/Wheel.h"
 
 //Forward Declaration
 struct InputEvent;
@@ -30,6 +31,7 @@ private:
 	void setMousePosText(const Point& mousePos);
 
 	Hero _hero;
+	Wheel _wheel;
 	Text _mousePosText;
 };
 
