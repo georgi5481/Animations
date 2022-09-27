@@ -33,6 +33,7 @@ private:
 	Hero _hero;
 	Wheel _wheel;
 	Text _mousePosText;
+	Image _blackBgrImage;
 };
 
 #endif /* GAME_GAME_H_ */

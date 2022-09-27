@@ -15,6 +15,10 @@ constexpr auto WINDOW_WIDTH = 1024;
 constexpr auto WINDOW_HEIGHT = 800;
 constexpr auto WINDOW_NAME = "Animations";
 
+
+constexpr auto BLACK_BGR_WIDTH = 1920;
+constexpr auto BLACK_BGR_HEIGHT = 1080;
+
 constexpr auto RUNNING_GIRL_FRAMES = 6;
 constexpr auto RUNNING_GIRL_WIDTH = 256;			//here you can scale manually the pictures
 constexpr auto RUNNING_GIRL_HEIGHT = 220;
@@ -58,6 +62,16 @@ static void populateImageContainerConfig(ImageContainerCfg& cfg){
 
 	cfg.imageConfigs.emplace(TextureId::WHEEL,imageCfg);
 	imageCfg.frames.clear();
+
+	imageCfg.location = getFilePath("resources/pictures/blackBackground.png");
+
+		imageCfg.frames.emplace_back(	0,						//x of the rectangle to visualise
+										0,						//y of the rectangle to visualise
+										BLACK_BGR_WIDTH,		//width
+										BLACK_BGR_HEIGHT);		//height
+
+		cfg.imageConfigs.emplace(TextureId::BLACK_BACKGROUND,imageCfg);
+		imageCfg.frames.clear();
 }
 
 
@@ -101,7 +115,7 @@ void populateManagerHandlerCfg(ManagerHandlerCfg& cfg){
 static void populateGameConfig(GameCfg& cfg){
 	cfg.runningGirlRsrcId = TextureId::RUNNING_GIRL;
 	cfg.wheelRsrcId = TextureId::WHEEL;
-
+	cfg.blackBgrImage = TextureId::BLACK_BACKGROUND;
 	cfg.textFontId = FontId::ANGELINE_VINTAGE_40;	//place unique key for our flyweight design pattern
 }
 

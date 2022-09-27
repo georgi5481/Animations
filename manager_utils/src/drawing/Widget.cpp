@@ -71,7 +71,7 @@ void Widget::setPosition(int32_t x, int32_t y) {
 void Widget::setOpacity(int32_t opacity) {
 	if(_isAlphaModulationEnabled){
 		std::cerr <<  "Alpha modulation was not enabled for rsrcId: "
-				<< _drawParams.rsrcId << "will not change opacity" << std::endl;
+				<< _drawParams.rsrcId << " will not change opacity" << std::endl;
 	return;
 	}
 	_drawParams.opacity = opacity;

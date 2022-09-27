@@ -15,6 +15,7 @@
 struct GameCfg {
 	int32_t runningGirlRsrcId;
 	int32_t wheelRsrcId;
+	int32_t blackBgrImage;
 
 	int32_t textFontId;
 };
