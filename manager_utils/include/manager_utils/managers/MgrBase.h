@@ -11,8 +11,6 @@
 
 //Forward Declaration
 
-
-
 enum{
 	DRAW_MGR_IDX,
 	RSRC_MGR_IDX,
@@ -23,7 +21,7 @@ class MgrBase {
 public:
 
 	MgrBase() = default;	//we have to set the base class constructor as well to be default if we want to use the default in the inherited
-	virtual ~MgrBase() = default;	//making the destructor virtual will make automatically all other members virtuals
+	virtual ~MgrBase() = default;	//making the destructor virtual will make automatically all other memberfunctions virtuals
 
 	MgrBase(const MgrBase& other) = delete;		//forbid the copy constructor
 	MgrBase(MgrBase&& other) = delete;			//forbid the copy and move assignment operators

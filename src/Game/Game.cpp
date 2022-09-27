@@ -47,7 +47,7 @@ void Game::handleEvent([[maybe_unused]]const InputEvent& e){
 	_wheel.handleEvent(e);
 	_hero.handleEvent(e);
 
-	if(TouchEvent::KEYBOARD_PRESS != e.type){	//if we don't touch with the mouse - do nothing
+	if(TouchEvent::KEYBOARD_RELEASE != e.type){	//if we don't touch with the mouse - do nothing
 		if(Keyboard::KEY_C == e.key){
 			_mousePosText.rotateRight(45);
 		}
